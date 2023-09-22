@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Garage from './Garage.js';
+import Car from './Car.js';
 
-const myElement = (
+const just = (
   <table>
     <tr>
       <th>Name</th>
@@ -15,11 +17,43 @@ const myElement = (
   </table>
 );
 
-const container1 = document.getElementById('sandy');
-const sandy = ReactDOM.createRoot(container1);
-sandy.render(<h1>Building A Website That Works!</h1>);
+const myElement = <h1>React is {5 + 5} times better with JSX</h1>;
 
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myElement);
 
+const table = document.getElementById('just');
+const just1 = ReactDOM.createRoot(table);
+just1.render(just)
+
+
+const title = document.getElementById('head');
+const head = ReactDOM.createRoot(title);
+head.render(<h1>Just Making A Website That's Superb!</h1>)
+
+const justice = document.getElementById('justice');
+const garage = ReactDOM.createRoot(justice);
+garage.render(<Garage />);
+
+const jut = ReactDOM.createRoot(document.getElementById('jut'));
+jut.render(<Car brand = 'Volvo' />);
+
+function MissedGoal() {
+  return <h1>YOU MISSED!</h1>;
+}
+
+function MadeGoal() {
+  return <h1>IT'S A GOAL!</h1>;
+}
+
+function Goal(props) {
+  const isGoal = props.isGoal;
+ return (
+  <>
+    { isGoal ? <MadeGoal/> : <MissedGoal/> }
+  </>
+ );
+}
+
+const jet = ReactDOM.createRoot(document.getElementById('jet'));
+jet.render(<Goal isGoal= {true} />);
